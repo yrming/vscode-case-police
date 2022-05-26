@@ -3,6 +3,13 @@
   "displayName": "Case Police",
   "description": "Case Police for VS Code",
   "version": "0.0.1",
+  "publisher": "YRM",
+  "license": "MIT",
+  "icon": "resources/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yrming/vscode-case-police"
+  },
   "engines": {
     "vscode": "^1.67.0"
   },
@@ -10,7 +17,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:case-police.helloWorld"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
