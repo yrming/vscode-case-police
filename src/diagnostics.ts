@@ -42,7 +42,7 @@ function createDiagnostic(
 
   const diagnostic = new vscode.Diagnostic(
     range,
-    `${correctStr}, not ${caseStr}, Make the case correct, PLEASE!, ${range.start.line}-${range.end.line}`,
+    `${correctStr}, not ${caseStr}, Make the case correct, PLEASE!`,
     vscode.DiagnosticSeverity.Warning
   )
   diagnostic.code = CASE_POLICE

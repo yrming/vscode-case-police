@@ -2,7 +2,7 @@
   "name": "case-police",
   "displayName": "Case Police",
   "description": "Case Police for VS Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "YRM",
   "license": "MIT",
   "icon": "resources/logo.png",
