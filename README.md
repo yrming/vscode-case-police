@@ -3,12 +3,8 @@
 <p align='center'>
 <img src="./resources/logo.png" width='100'/>
 </p>
-<p align='center' style="font-style:italic">
-Chan Wing-yan: <b>Sorry, I'm A Cop</b>
-</p>
-
 <p align='center'>
-VSCode Extension for <a href='https://github.com/antfu/case-police'>Case Police</a>
+Chan Wing-yan: <b>Sorry, I'm A Cop</b>
 </p>
 
 <br>
