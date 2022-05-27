@@ -16,7 +16,7 @@ Chan Wing-yan: <b>Sorry, I'm A Cop</b>
 
 ## TODO
 
-- [x] Global check
+- [x] Check case globally
 - [x] Convert to correct case
 - [ ] Enable / Disable toggle switch
 - [ ] Check only specific files
