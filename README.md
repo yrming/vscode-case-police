@@ -14,6 +14,14 @@ Chan Wing-yan: <b>Sorry, I'm A Cop</b>
 
 **Status**: Preview
 
+## TODO
+
+- [x] Global check
+- [x] Convert to correct case
+- [ ] Enable / Disable toggle switch
+- [ ] Check only specific files
+- [ ] Ignore the particular file
+
 ## Related
 
 - [case-police](https://github.com/antfu/case-police) - 🚨 Make the case correct, PLEASE!
