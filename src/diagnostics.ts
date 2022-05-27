@@ -15,7 +15,7 @@ export function refreshDiagnostics(
     Array.from(lineOfText.text.matchAll(regex)).forEach((match) => {
       const [, key] = match
       if (key) {
-        diagnostics.push(createDiagnostic(doc, lineOfText, lineIndex, key, detectDict[key]))
+        diagnostics.push(createDiagnostic(doc, lineOfText, lineIndex, match.index!, key, detectDict[key]))
       }
     })
   }
@@ -33,12 +33,11 @@ function createDiagnostic(
   doc: vscode.TextDocument,
   lineOfText: vscode.TextLine,
   lineIndex: number,
+  fromIndexOfCurrentLine: number,
   caseStr: string,
   correctStr: string
 ): vscode.Diagnostic {
-  const index = lineOfText.text.indexOf(caseStr)
-
-  const range = new vscode.Range(lineIndex, index, lineIndex, index + caseStr.length)
+  const range = new vscode.Range(lineIndex, fromIndexOfCurrentLine, lineIndex, fromIndexOfCurrentLine + caseStr.length)
 
   const diagnostic = new vscode.Diagnostic(
     range,
@@ -66,12 +65,8 @@ export function subscribeToDocumentChanges(
   )
 
   context.subscriptions.push(
-    vscode.workspace.onDidChangeTextDocument((e) =>
-      refreshDiagnostics(e.document, caseDiagnostics, detectDict)
-    )
+    vscode.workspace.onDidChangeTextDocument((e) => refreshDiagnostics(e.document, caseDiagnostics, detectDict))
   )
 
-  context.subscriptions.push(
-    vscode.workspace.onDidCloseTextDocument((doc) => caseDiagnostics.delete(doc.uri))
-  )
+  context.subscriptions.push(vscode.workspace.onDidCloseTextDocument((doc) => caseDiagnostics.delete(doc.uri)))
 }
